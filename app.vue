@@ -1,6 +1,8 @@
 <template>
-  <main class="h-screen w-screen">
-    <NuxtPage />
+  <main class="h-screen w-full">
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </main>
 </template>
 
