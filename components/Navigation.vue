@@ -1,13 +1,11 @@
 <template>
-  <header class="h-16 w-full sticky top-0 px-6 border-b-2">
+  <header class="h-full w-full sticky top-0 px-6 border-b-2">
     <nav
-      class="grid h-16 grid-rows-1 grid-cols-[1fr_82px_82px_82px_82px] items-center"
+      class="grid h-full grid-rows-1 grid-cols-[1fr_82px_82px_82px_82px] items-center"
     >
-      <div class="h-16 w-fill flex items-center">
-        <div class="h-7 w-32 pl-4 flex items-center aspect-auto">
-          <nuxt-link class="fill-dualingo h-full w-full" to="/">
-            <UiDualingoLogo />
-          </nuxt-link>
+      <div class="h-full w-fill flex items-center">
+        <div class="h-7 w-32 fill-dualingo pl-4 flex items-center aspect-auto">
+          <UiDualingoLogo />
         </div>
       </div>
       <div class="h-full w-full flex items-center px-[18px]">

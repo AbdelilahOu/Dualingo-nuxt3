@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.router-link-exact-active {
+  @apply bg-sky-100 border-2 border-sky-300;
+}
+
+.router-link-exact-active:hover {
+  @apply bg-sky-100 border-2 border-sky-300;
+}
