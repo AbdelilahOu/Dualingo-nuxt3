@@ -24,7 +24,7 @@ definePageMeta({
             class="col-start-3 h-full border-x-2 w-full row-span-full flex flex-col"
           >
             <div v-for="(item, index) in 20" :key="index">
-              {{ item }}
+              {{ index }}
             </div>
           </div>
           <div
