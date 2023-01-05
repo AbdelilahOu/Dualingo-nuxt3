@@ -1,6 +1,6 @@
 <template>
   <header
-    class="h-full w-full sticky flex justify-center top-0 px-6 border-b-2"
+    class="h-full w-full col-span-full sticky z-30 bg-white flex justify-center top-0 px-6 border-b-2"
   >
     <nav
       class="grid h-full w-full max-w-[1320px] grid-rows-1 grid-cols-[1fr_82px_82px_82px_82px] items-center"

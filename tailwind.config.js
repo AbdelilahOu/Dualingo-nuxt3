@@ -13,6 +13,11 @@ module.exports = {
         dualingo: "#58CC02",
         uniteOrange: "#ff960",
       },
+      gridTemplateRows: {
+        a: "repeat(10, minmax(0,1fr))",
+        b: "repeat(11, minmax(0,1fr))",
+        c: "repeat(12, minmax(0,1fr))",
+      },
     },
   },
   plugins: [],

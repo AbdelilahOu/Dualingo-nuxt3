@@ -1,5 +1,5 @@
 <template>
-  <main class="h-screen w-full">
+  <main>
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
