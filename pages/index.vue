@@ -7,7 +7,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="h-fit w-full">
+  <div class="h-full w-full">
     <div class="w-full h-full grid md:grid-cols-[1fr_300px]">
       <div class="w-full h-full flex flex-col">
         <UniteCard Unite="1" Title="Describe the weather" />
@@ -21,10 +21,16 @@ definePageMeta({
           </div>
 
           <div
-            class="col-start-3 h-full border-x-2 w-full row-span-full flex flex-col"
+            class="col-start-3 items-center w-full row-span-full grid grid-rows-c"
           >
-            <div v-for="(item, index) in 20" :key="index">
-              {{ index }}
+            <div
+              v-for="index in 12"
+              :key="index"
+              class="relative w-full h-full flex items-center justify-center"
+            >
+              <div class="absolute">
+                <UiCourseButton :IsActive="true" :IsCurrent="true" />
+              </div>
             </div>
           </div>
           <div
