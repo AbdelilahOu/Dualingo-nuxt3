@@ -1,14 +1,16 @@
 <template>
-  <header class="h-full w-full sticky top-0 px-6 border-b-2">
+  <header
+    class="h-full w-full sticky flex justify-center top-0 px-6 border-b-2"
+  >
     <nav
-      class="grid h-full grid-rows-1 grid-cols-[1fr_82px_82px_82px_82px] items-center"
+      class="grid h-full w-full max-w-[1320px] grid-rows-1 grid-cols-[1fr_82px_82px_82px_82px] items-center"
     >
       <div class="h-full w-fill flex items-center">
         <div class="h-7 w-32 fill-dualingo pl-4 flex items-center aspect-auto">
           <UiDualingoLogo />
         </div>
       </div>
-      <div class="h-full w-full flex items-center px-[18px]">
+      <div class="h-full w-full flex items-center cursor-pointer px-[18px]">
         <img src="../assets/svg/german.svg" alt="" />
       </div>
       <div class="h-full w-full flex items-center px-[18px]">

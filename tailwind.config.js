@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       colors: {
         dualingo: "#58CC02",
+        uniteOrange: "#ff960",
       },
     },
   },
