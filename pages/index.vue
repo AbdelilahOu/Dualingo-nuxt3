@@ -5,7 +5,7 @@ definePageMeta({
   layout: "home-layout",
 });
 //
-const courses = ref<number>(0);
+const courses = ref<number>(5);
 const breakSign = ref<number>(-1);
 const getPositionFromIndex = (index: number): number => {
   if (index % 4 == 0) breakSign.value = breakSign.value * -1;

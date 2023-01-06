@@ -12,8 +12,6 @@
     "nuxt": "3.0.0-rc.12"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.4.6",
-    "pinia": "^2.0.28",
     "vue3-lottie": "^2.4.0"
   }
 }
