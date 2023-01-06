@@ -13,23 +13,18 @@ defineProps({
   Lessons: {
     type: Number,
   },
-  onLesson: {
-    type: Number,
-  },
 });
-
-const unite = 1;
-const course = 4;
-const lesson = 2;
-const lessons = 6;
 </script>
 
 <template>
   <button
-    style="box-shadow: 0 8px 0 brown"
+    :style="`${
+      IsActive ? 'box-shadow: 0 8px 0 brown' : 'box-shadow: 0 8px 0 gray'
+    }`"
     :class="[
-      'w-[70px] h-[60px]  relative bg-orange-500 flex items-center rounded-[50%/50%] justify-center',
+      'w-[70px] h-[60px]  relative  flex items-center rounded-[50%/50%] justify-center',
       IsCurrent ? 'ring-4 ring-offset-8 ring-gray-600' : '',
+      IsActive ? 'bg-orange-500' : 'bg-gray-400',
     ]"
   >
     <img class="absolute" src="../../assets/svg/courseStart.svg" alt="" />

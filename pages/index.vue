@@ -1,9 +1,21 @@
 <script setup lang="ts">
 import { bird } from "../assets/animations";
-
+//
 definePageMeta({
   layout: "home-layout",
 });
+//
+const breakSign = ref<number>(1);
+const getPositionFromIndex = (index: number): number => {
+  if (index % 4 == 0) breakSign.value = breakSign.value * -1;
+  const position: number[] = [0, 44, 70, 44];
+  return position[index % 4] * breakSign.value;
+};
+
+const unite = 1;
+const course = 4;
+const lesson = 2;
+const lessons = 6;
 </script>
 
 <template>
@@ -11,9 +23,9 @@ definePageMeta({
     <div class="w-full h-full grid md:grid-cols-[1fr_300px]">
       <div class="w-full h-full flex flex-col">
         <UniteCard Unite="1" Title="Describe the weather" />
-        <div class="w-full h-full grid grid-cols-5 grid-rows-2">
+        <div class="w-full h-full grid grid-cols-5 grid-rows-2 max-h-screen">
           <div class="col-start-1 col-span-2 grid grid-cols-2 grid-rows-6">
-            <div class="row-start-3 row-end-5 col-span-2">
+            <div class="row-start-2 row-end-5 col-span-2">
               <client-only>
                 <Vue3Lottie :animationData="bird" :speed="1" />
               </client-only>
@@ -21,22 +33,28 @@ definePageMeta({
           </div>
 
           <div
-            class="col-start-3 items-center w-full row-span-full grid grid-rows-c"
+            class="col-start-3 items-center w-full row-span-full grid grid-rows-a"
           >
             <div
-              v-for="index in 12"
+              v-for="index in 4"
               :key="index"
               class="relative w-full h-full flex items-center justify-center"
             >
-              <div class="absolute">
-                <UiCourseButton :IsActive="true" :IsCurrent="true" />
+              <div
+                :style="`left: ${getPositionFromIndex(index - 1)}px`"
+                class="absolute"
+              >
+                <UiCourseButton
+                  :IsActive="index <= lesson"
+                  :IsCurrent="index == lesson"
+                ></UiCourseButton>
               </div>
             </div>
           </div>
           <div
             class="col-start-4 row-start-2 col-span-2 800 grid grid-cols-2 grid-rows-6"
           >
-            <div class="row-start-3 row-end-5 col-span-2">
+            <div class="col-span-2 row-span-2">
               <client-only>
                 <Vue3Lottie :animationData="bird" :speed="1" />
               </client-only>
