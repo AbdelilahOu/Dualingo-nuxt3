@@ -5,12 +5,12 @@ definePageMeta({
   layout: "home-layout",
 });
 //
-const courses = ref<number>(5);
-const breakSign = ref<number>(-1);
+const courses = ref<number>(0);
+let breakSign: number = -1;
 const getPositionFromIndex = (index: number): number => {
-  if (index % 4 == 0) breakSign.value = breakSign.value * -1;
+  if (index % 4 == 0) breakSign = breakSign * -1;
   const position: number[] = [0, 44, 70, 44];
-  return position[index % 4] * breakSign.value;
+  return position[index % 4] * breakSign;
 };
 
 onMounted(() => {
@@ -21,8 +21,8 @@ const lesson = 2;
 </script>
 
 <template>
-  <div class="h-full w-full">
-    <div class="w-full h-full grid md:grid-cols-[1fr_300px]">
+  <div class="h-full w-full pl-6">
+    <div class="w-full h-full grid gap-6 md:grid-cols-2">
       <div class="w-full h-full flex flex-col">
         <UniteCard Unite="1" Title="Describe the weather" />
         <div
@@ -65,7 +65,12 @@ const lesson = 2;
           </div>
         </div>
       </div>
-      <div class="hidden md:flex flex-col"></div>
+      <div class="hidden md:flex flex-col">
+        <div class="z-30 sticky top-[92px] flex flex-col gap-5">
+          <LeagueRank />
+          <WeeklyStats />
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="w-full h-fit pl-4 z-30 sticky top-[92px] pr-6 flex flex-col gap-2 transition-all duration-150"
+    class="w-full h-fit z-30 sticky top-[92px] flex flex-col gap-2 transition-all duration-150"
   >
     <div class="w-full h-14 flex items-center justify-center">
       <nuxt-link
