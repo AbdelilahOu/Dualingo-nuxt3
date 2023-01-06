@@ -5,17 +5,19 @@ definePageMeta({
   layout: "home-layout",
 });
 //
-const breakSign = ref<number>(1);
+const courses = ref<number>(0);
+const breakSign = ref<number>(-1);
 const getPositionFromIndex = (index: number): number => {
   if (index % 4 == 0) breakSign.value = breakSign.value * -1;
   const position: number[] = [0, 44, 70, 44];
   return position[index % 4] * breakSign.value;
 };
 
-const unite = 1;
-const course = 4;
+onMounted(() => {
+  courses.value = 5;
+});
+
 const lesson = 2;
-const lessons = 6;
 </script>
 
 <template>
@@ -23,7 +25,9 @@ const lessons = 6;
     <div class="w-full h-full grid md:grid-cols-[1fr_300px]">
       <div class="w-full h-full flex flex-col">
         <UniteCard Unite="1" Title="Describe the weather" />
-        <div class="w-full h-full grid grid-cols-5 grid-rows-2 max-h-screen">
+        <div
+          class="w-full h-full grid grid-flow-col grid-cols-5 grid-rows-2 max-h-screen"
+        >
           <div class="col-start-1 col-span-2 grid grid-cols-2 grid-rows-6">
             <div class="row-start-2 row-end-5 col-span-2">
               <client-only>
@@ -31,12 +35,11 @@ const lessons = 6;
               </client-only>
             </div>
           </div>
-
           <div
             class="col-start-3 items-center w-full row-span-full grid grid-rows-a"
           >
             <div
-              v-for="index in 4"
+              v-for="index in courses"
               :key="index"
               class="relative w-full h-full flex items-center justify-center"
             >
