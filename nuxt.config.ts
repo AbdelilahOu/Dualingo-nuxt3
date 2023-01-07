@@ -3,4 +3,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss"],
   css: ["@/assets/tailwind.css"],
   components: true,
+  build: {
+    transpile: ["chart.js"],
+  },
 });
