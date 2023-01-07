@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import { bird } from "../assets/animations";
 //
+useHead({
+  title: "Dualingo",
+  link: [
+    {
+      rel: "icon",
+      href: "https://d35aaqx5ub95lt.cloudfront.net/favicon.ico",
+    },
+  ],
+});
+//
 definePageMeta({
   layout: "home-layout",
 });

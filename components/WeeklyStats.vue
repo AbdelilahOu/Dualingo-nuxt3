@@ -28,6 +28,8 @@
         </div>
       </div>
     </div>
-    <div class="w-full h-full"><XpGraph /></div>
+    <div class="w-full h-full">
+      <XpGraph :chartData="[50, 20, 120, 350, 20, 100, 12]" />
+    </div>
   </div>
 </template>

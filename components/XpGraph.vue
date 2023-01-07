@@ -9,7 +9,14 @@ import {
   Tooltip,
   Filler,
 } from "chart.js";
+import { PropType } from "vue";
 import { Line } from "vue-chartjs";
+
+const props = defineProps({
+  chartData: {
+    type: Array as PropType<number[]>,
+  },
+});
 
 ChartJS.register(
   CategoryScale,
@@ -25,15 +32,49 @@ const chartData = {
   datasets: [
     {
       backgroundColor: "rgba(255, 200, 0, 0.2)",
-      borderColor: "rgb(255, 200, 0)",
-      data: [40, 20, 12, 40, 20, 12, 12],
+      borderColor: "rgba(255, 200, 0,0.5)",
+      data: props.chartData,
       fill: true,
-      lineTention: 0.3,
+      tention: 0.3,
+      borderWidth: 2,
+      pointBorderWidth: 3,
+      pointBackgroundColor: "rgb(255, 200, 0)",
     },
   ],
 };
 const chartOptions = {
   responsive: true,
+  scales: {
+    x: {
+      grid: {
+        display: false,
+      },
+      ticks: {
+        color: "#cccac9",
+        textStrokeWidth: 10,
+      },
+      border: {
+        display: false,
+      },
+    },
+    y: {
+      grid: {
+        lineWidth: 3,
+        drawBorder: false,
+      },
+      border: {
+        display: false,
+      },
+      ticks: {
+        color: "#cccac9",
+        max: 360,
+        stepSize: 90,
+        min: 0,
+        textStrokeWidth: 1,
+        padding: 10,
+      },
+    },
+  },
 };
 </script>
 
