@@ -59,7 +59,7 @@ const lesson = 2;
                 class="absolute"
               >
                 <UiCourseButton
-                  :IsDone="index < lesson"
+                  :IsCompleted="index < lesson"
                   :IsCurrent="index == lesson"
                 >
                   <UiCourseButtonSlot :IsDone="index < lesson" />

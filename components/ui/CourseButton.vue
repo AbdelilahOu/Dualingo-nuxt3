@@ -5,7 +5,7 @@ defineProps({
     required: true,
     default: false,
   },
-  IsDone: {
+  IsCompleted: {
     type: Boolean,
     required: true,
     default: false,
@@ -19,10 +19,10 @@ defineProps({
 <template>
   <button
     :class="[
-      IsCurrent ? 'activeCourse' : IsDone ? 'competedCourse' : 'notActive',
+      IsCurrent ? 'activeCourse' : IsCompleted ? 'competedCourse' : 'notActive',
     ]"
   >
-    <slot v-if="!IsCurrent || IsDone"></slot>
+    <slot v-if="!IsCurrent || IsCompleted"></slot>
     <img
       v-if="IsCurrent"
       class="absolute"
