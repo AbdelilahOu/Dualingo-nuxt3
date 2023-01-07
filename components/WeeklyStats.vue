@@ -17,10 +17,10 @@
           alt=""
         />
       </div>
-      <div class="flex flex-col w-full justify-center pl-3">
+      <div class="flex flex-col w-full justify-center gap-2 pl-3">
         <span class="text-gray-800"> Daily Goal </span>
         <div class="flex gap-3 flex-nowrap justify-between items-center">
-          <span class="w-full h-3 bg-gray-200 rounded-full">
+          <span class="w-full h-[14px] bg-gray-200 rounded-full">
             <span class="w-[50%] h-full rounded-full bg-yellow-400 block">
             </span>
           </span>

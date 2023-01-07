@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { bird } from "../assets/animations";
+import { bird, gothic } from "../assets/animations";
 //
 useHead({
   title: "Dualingo",
@@ -24,7 +24,7 @@ const getPositionFromIndex = (index: number): number => {
 };
 
 onMounted(() => {
-  courses.value = 5;
+  courses.value = 10;
 });
 
 const lesson = 2;
@@ -32,13 +32,14 @@ const lesson = 2;
 
 <template>
   <div class="h-full w-full pl-6">
-    <div class="w-full h-full grid gap-6 md:grid-cols-2">
-      <div class="w-full h-full flex flex-col">
+    <div class="w-full h-full grid gap-6 md:grid-cols-2 lg:grid-cols-a">
+      <div class="w-full h-full flex flex-col lg:col-span-6">
         <UniteCard Unite="1" Title="Describe the weather" />
+        <!--  -->
         <div
-          class="w-full h-full grid grid-flow-col grid-cols-5 grid-rows-2 max-h-screen"
+          class="w-full h-full grid grid-flow-col grid-rows-1 grid-cols-5 max-h-screen"
         >
-          <div class="col-start-1 col-span-2 grid grid-cols-2 grid-rows-6">
+          <div class="col-start-1 col-span-2 grid grid-rows-a">
             <div class="row-start-2 row-end-5 col-span-2">
               <client-only>
                 <Vue3Lottie :animationData="bird" :speed="1" />
@@ -58,24 +59,24 @@ const lesson = 2;
                 class="absolute"
               >
                 <UiCourseButton
-                  :IsActive="index <= lesson"
+                  :IsDone="index < lesson"
                   :IsCurrent="index == lesson"
-                ></UiCourseButton>
+                >
+                  <UiCourseButtonSlot :IsDone="index < lesson" />
+                </UiCourseButton>
               </div>
             </div>
           </div>
-          <div
-            class="col-start-4 row-start-2 col-span-2 800 grid grid-cols-2 grid-rows-6"
-          >
-            <div class="col-span-2 row-span-2">
+          <div class="col-start-4 col-span-2 grid grid-rows-a">
+            <div class="row-start-6 row-end-10 row-span-3 col-span-2">
               <client-only>
-                <Vue3Lottie :animationData="bird" :speed="1" />
+                <Vue3Lottie :animationData="gothic" :speed="1" />
               </client-only>
             </div>
           </div>
         </div>
       </div>
-      <div class="hidden md:flex flex-col">
+      <div class="hidden md:flex flex-col lg:col-span-4">
         <div class="z-30 sticky top-[92px] flex flex-col gap-5">
           <LeagueRank />
           <WeeklyStats />

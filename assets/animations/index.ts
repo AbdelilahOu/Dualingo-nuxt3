@@ -1,2 +1,4 @@
 import bird from "./dualingo.json";
-export { bird };
+import buttonGlow from "./buttonGlow.json";
+import gothic from "./gothic.json";
+export { bird, buttonGlow, gothic };
