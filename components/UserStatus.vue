@@ -76,17 +76,17 @@ onMounted(() => {
   <div class="border-2 rounded-2xl h-fit flex flex-col gap-4 p-5">
     <div class="flex justify-between items-center">
       <span class="font-bold text-2xl"> Set your status </span>
-      <span
+      <button
         class="uppercase text-sm font-bold text-sky-500 hover:text-sky-400 duration-150 transition-all"
       >
         clear
-      </span>
+      </button>
     </div>
     <div class="w-full h-fit relative flex items-center justify-center">
       <div class="w-fit h-fit relative mb-6">
         <span
           :class="[
-            'transition-all duration-150  border-2 h-12 w-12 bg-white flex items-center justify-center p-[2px] border-gray-200 rounded-[50%_50%_50%_16%] absolute top-[-12px] left-16',
+            'transition-all duration-200  border-2 h-12 w-12 bg-white flex items-center justify-center p-[2px] border-gray-200 rounded-[50%_50%_50%_16%] absolute top-[-12px] left-16',
             IsChanged ? 'scale-125' : '',
             activeStatus.bg ? 'bg-dualingo' : '',
           ]"
@@ -108,11 +108,12 @@ onMounted(() => {
       <div
         :class="[
           'cursor-pointer h-12 w-12 border-2 border-b-4 rounded-xl flex items-center justify-center',
+          item.bg ? ' bg-dualingo' : '',
           item.link === activeStatus.link
             ? item.bg
               ? 'border-sky-300 bg-dualingo'
               : 'border-sky-300 bg-sky-100'
-            : 'border-gray-300 ',
+            : 'border-gray-300',
         ]"
         @click="activeStatus = item"
         v-for="(item, index) in status"

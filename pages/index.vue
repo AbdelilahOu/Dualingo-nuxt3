@@ -43,7 +43,7 @@ const lesson = 2;
             </div>
           </div>
           <div
-            class="col-start-3 items-center w-full row-span-full grid grid-rows-a"
+            class="col-start-3 items-center w-full row-span-full gap-14 pt-5 lg:gap-7 grid grid-rows-a"
           >
             <div
               v-for="index in courses"
