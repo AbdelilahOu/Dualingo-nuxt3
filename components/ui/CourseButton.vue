@@ -19,7 +19,11 @@ defineProps({
 <template>
   <button
     :class="[
-      IsCurrent ? 'activeCourse' : IsCompleted ? 'competedCourse' : 'notActive',
+      IsCurrent
+        ? 'activeCourse buttonCourse'
+        : IsCompleted
+        ? 'completedCourse buttonCourse'
+        : 'notActive',
     ]"
   >
     <slot v-if="!IsCurrent || IsCompleted"></slot>

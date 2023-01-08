@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: Proxima Nova, system-ui, sans-serif;
+  }
+}
+
 .router-link-exact-active {
   @apply bg-sky-100 border-2 border-sky-300 text-[#1cb0f];
 }
@@ -19,9 +25,14 @@
   box-shadow: 0 8px 0 brown;
 }
 
-.competedCourse {
+.completedCourse {
   @apply w-[70px] h-[60px] bg-courseDone  relative  flex items-center rounded-[50%/50%] justify-center;
   box-shadow: 0 8px 0 orange;
+}
+
+.buttonCourse:active {
+  top: 8px;
+  box-shadow: 0 0px 0 white;
 }
 
 .notActive {

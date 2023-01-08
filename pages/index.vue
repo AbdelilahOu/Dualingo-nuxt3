@@ -15,17 +15,13 @@ definePageMeta({
   layout: "home-layout",
 });
 //
-const courses = ref<number>(0);
+const courses = ref<number>(8);
 let breakSign: number = -1;
 const getPositionFromIndex = (index: number): number => {
   if (index % 4 == 0) breakSign = breakSign * -1;
   const position: number[] = [0, 44, 70, 44];
   return position[index % 4] * breakSign;
 };
-
-onMounted(() => {
-  courses.value = 10;
-});
 
 const lesson = 2;
 </script>
@@ -37,7 +33,7 @@ const lesson = 2;
         <UniteCard Unite="1" Title="Describe the weather" />
         <!--  -->
         <div
-          class="w-full h-full grid grid-flow-col grid-rows-1 grid-cols-5 max-h-screen"
+          class="w-full h-full grid grid-flow-col pt-4 grid-rows-1 grid-cols-5 max-h-screen"
         >
           <div class="col-start-1 col-span-2 grid grid-rows-a">
             <div class="row-start-2 row-end-5 col-span-2">
@@ -52,7 +48,7 @@ const lesson = 2;
             <div
               v-for="index in courses"
               :key="index"
-              class="relative w-full h-full flex items-center justify-center"
+              class="relative w-full h-full py-2 flex items-center justify-center"
             >
               <div
                 :style="`left: ${getPositionFromIndex(index - 1)}px`"
@@ -68,9 +64,18 @@ const lesson = 2;
             </div>
           </div>
           <div class="col-start-4 col-span-2 grid grid-rows-a">
-            <div class="row-start-6 row-end-10 row-span-3 col-span-2">
+            <div
+              :class="[
+                'row-start-6  row-end-10 row-span-3 col-span-2',
+                lesson < 6 ? 'grayscale' : '',
+              ]"
+            >
               <client-only>
-                <Vue3Lottie :animationData="gothic" :speed="1" />
+                <Vue3Lottie
+                  :autoPlay="lesson > 6"
+                  :animationData="gothic"
+                  :speed="1"
+                />
               </client-only>
             </div>
           </div>

@@ -22,15 +22,14 @@ definePageMeta({
       <div class="w-full h-full flex flex-col lg:col-span-6">
         <!-- <UniteCard Unite="1" Title="Describe the weather" /> -->
         <div
-          class="w-full h-full grid grid-flow-col grid-cols-5 grid-rows-2 max-h-screen"
+          class="w-full h-full pt-2 grid grid-flow-col grid-cols-1 max-h-screen"
         >
           <!-- content -->
         </div>
       </div>
       <div class="hidden md:flex flex-col lg:col-span-4">
-        <div class="z-30 sticky top-[92px] flex flex-col gap-5">
-          <!-- <LeagueRank />
-          <WeeklyStats /> -->
+        <div class="z-30 sticky h-full top-[92px] flex flex-col gap-5">
+          <UserStatus />
         </div>
       </div>
     </div>
