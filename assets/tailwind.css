@@ -5,6 +5,7 @@
 @layer base {
   html {
     font-family: Proxima Nova, system-ui, sans-serif;
+    height: 100vh;
   }
 }
 
@@ -13,11 +14,15 @@
 }
 
 .router-link-exact-active:hover {
-  @apply bg-sky-100 border-2 border-sky-300 text-[#1cb0f];
+  @apply bg-sky-100 border-2 border-sky-300 !important;
 }
 
 .router-link-exact-active > span {
   @apply text-sky-400;
+}
+
+.router-link-exact-active:hover > span {
+  @apply text-sky-400 !important;
 }
 
 .activeCourse {

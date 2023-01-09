@@ -3,7 +3,7 @@
     <Navigation />
     <div class="flex justify-center px-6">
       <div
-        class="max-w-[1320px] w-full grid grid-rows-1 pt-6 grid-cols-[70px_1fr] lg:grid-cols-[260px_1fr]"
+        class="max-w-[1320px] w-full grid grid-rows-1 bg-white pt-6 grid-cols-[70px_1fr] lg:grid-cols-[260px_1fr]"
       >
         <SideNavigation />
         <div class="h-full w-full">

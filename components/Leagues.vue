@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full z-30 sticky top-[92px] border-b-2 h-full pt-3 pb-5 px-5 flex flex-col items-center gap-3 justify-center"
+    class="w-full bg-white z-30 sticky top-[92px] border-b-2 h-full pt-3 pb-5 px-5 flex flex-col items-center gap-3 justify-center"
   >
     <div
       class="flex overflow-x-clip h-full w-full justify-center gap-9 pt-3 mb-3"

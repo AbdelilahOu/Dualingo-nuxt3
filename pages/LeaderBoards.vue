@@ -19,10 +19,16 @@ definePageMeta({
 <template>
   <div class="h-full w-full pl-6">
     <div class="w-full h-full grid gap-6 md:grid-cols-2 lg:grid-cols-a">
-      <div class="w-full h-full flex flex-col lg:col-span-6">
+      <div class="w-full h-full flex flex-col justify-between lg:col-span-6">
         <Leagues />
-        <div class="w-full h-full pt-2 flex flex-col max-h-screen">
+        <div class="w-full h-full flex flex-col max-h-screen">
+          <div
+            class="w-full h-full sticky z-20 top-[68px] bg-white block text-white"
+          >
+            .
+          </div>
           <!-- content -->
+          <PlayerCard v-for="(item, index) in 20" :key="index" />
         </div>
       </div>
       <div class="hidden md:flex flex-col lg:col-span-4">
