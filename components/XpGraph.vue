@@ -12,12 +12,6 @@ import {
 import { PropType } from "vue";
 import { Line } from "vue-chartjs";
 
-const props = defineProps({
-  chartData: {
-    type: Array as PropType<number[]>,
-  },
-});
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -27,6 +21,16 @@ ChartJS.register(
   Tooltip,
   Filler
 );
+
+const props = defineProps({
+  chartData: {
+    type: Array as PropType<number[]>,
+  },
+});
+
+const max = Math.max(...props.chartData);
+const stp = Math.floor(max / 4);
+
 const chartData = {
   labels: ["Su", "M", "Tu", "W", "Th", "F", "Sa"],
   datasets: [
@@ -67,8 +71,8 @@ const chartOptions = {
       },
       ticks: {
         color: "#cccac9",
-        max: 360,
-        stepSize: 90,
+        max,
+        stepSize: stp,
         min: 0,
         textStrokeWidth: 1,
         padding: 10,
