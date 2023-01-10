@@ -1,9 +1,26 @@
+<script setup lang="ts">
+defineProps({
+  name: {
+    type: String,
+    required: true,
+  },
+  index: {
+    type: Number,
+    required: true,
+  },
+  xp: {
+    type: Number,
+    required: true,
+  },
+});
+</script>
+
 <template>
   <div
     class="w-full flex h-16 flex-nowrap items-center justify-between rounded-lg py-2 px-5"
   >
     <div class="flex gap-6 w-full items-center justify-start">
-      <span class="font-bold"> 1 </span>
+      <span class="font-bold"> {{ index }} </span>
       <div class="h-full relative">
         <span
           :class="[
@@ -27,12 +44,12 @@
       <h1
         class="font-bold whitespace-nowrap pl-2 w-fit overflow-ellipsis overflow-hidden text-gray-700 text-medium"
       >
-        Abdelilah ouaadouch
+        {{ name }}
       </h1>
     </div>
     <span
       class="text font-normal text-lg uppercase whitespace-nowrap text-gray-500"
-      >10 xp</span
+      >{{ xp }} xp</span
     >
   </div>
 </template>

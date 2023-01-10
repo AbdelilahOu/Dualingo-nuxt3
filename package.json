@@ -16,6 +16,7 @@
     "@pinia/nuxt": "^0.4.6",
     "@prisma/client": "^4.8.0-dev.21",
     "chart.js": "^4.1.2",
+    "pinia": "^2.0.28",
     "vue-chartjs": "^5.1.0",
     "vue3-lottie": "^2.4.0"
   }

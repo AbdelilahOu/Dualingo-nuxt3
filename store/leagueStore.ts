@@ -1,4 +1,5 @@
 import type { leagueState } from "../types";
+import { defineStore } from "pinia";
 
 export const useLeagueStore = defineStore("leagueStore", {
   state: (): leagueState => {

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { storeToRefs } from "pinia";
+import { useLeagueStore } from "~~/store/leagueStore";
+
 //
 useHead({
   title: "Dualingo",
@@ -14,6 +17,8 @@ definePageMeta({
   layout: "home-layout",
 });
 //
+const leagueStore = useLeagueStore();
+const { leagueBoard } = storeToRefs(leagueStore);
 </script>
 
 <template>
@@ -28,7 +33,7 @@ definePageMeta({
             .
           </div>
           <!-- content -->
-          <PlayerCard v-for="(item, index) in 20" :key="index" />
+          <LeaguePlayers :leagueBoard="leagueBoard" />
         </div>
       </div>
       <div class="hidden md:flex flex-col lg:col-span-4">

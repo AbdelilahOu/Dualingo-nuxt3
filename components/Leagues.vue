@@ -1,3 +1,6 @@
+<script setup lang="ts">
+const { timerDate } = useTime();
+</script>
 <template>
   <div
     class="w-full bg-white z-30 sticky top-[92px] border-b-2 h-full pt-3 pb-5 px-5 flex flex-col items-center gap-3 justify-center"
@@ -33,7 +36,7 @@
         >Top 7 advance to the next league</span
       >
       <span class="text-orange-500 font-bold text-lg">
-        {{ new Date().getDate() }}
+        {{ timerDate() }}
       </span>
     </div>
   </div>
