@@ -10,7 +10,7 @@ export const useUserStore = defineStore("userStore", {
   actions: {
     getUserData: async function () {
       const { id } = this.user;
-      const res = await useCustomFetch("/api/user/" + id, {
+      const res = await useCustomFetch<userState>("/api/user/" + id, {
         method: "GET",
       });
     },

@@ -1,4 +1,4 @@
-export default (url: string, options: optionsType) => {
+export default <T>(url: string, options: optionsType): Promise<T> => {
   return $fetch(url, {
     ...options,
     headers: {
