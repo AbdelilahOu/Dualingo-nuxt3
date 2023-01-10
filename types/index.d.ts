@@ -3,6 +3,7 @@ export interface userState {
 }
 
 export interface User {
+  id: number;
   name: string;
   email: string;
 }
