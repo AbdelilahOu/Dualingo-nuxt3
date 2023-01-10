@@ -11,6 +11,25 @@ datasource db {
 }
 
 model User {
-  id   Int    @id @default(autoincrement())
-  name String @unique()
+  id        Int      @id @default(autoincrement())
+  name      String   @unique()
+  username  String   @unique()
+  email     String   @unique()
+  createdAt DateTime @default(now())
+  following Json
+  followers Json
+  langues   Json
+  totalXp   BigInt
+  streak    Int
+  league    String
+  status    String
+  online    Boolean  @default(true)
+  League    League   @relation(fields: [league], references: [name])
+}
+
+model League {
+  id      Int    @id @default(autoincrement())
+  name    String @unique()
+  img     String @unique()
+  players User[]
 }
