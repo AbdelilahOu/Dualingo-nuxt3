@@ -34,7 +34,7 @@ const lesson = 2;
         <UniteCard Unite="1" Title="Describe the weather" />
         <!--  -->
         <div
-          class="w-full h-full grid grid-flow-col grid-rows-1 grid-cols-5 max-h-screen"
+          class="w-full h-full grid grid-flow-col pt-4 grid-rows-1 grid-cols-5 max-h-screen"
         >
           <div class="col-start-1 col-span-2 grid grid-rows-a">
             <div class="row-start-2 row-end-5 col-span-2">
@@ -55,14 +55,16 @@ const lesson = 2;
                 :style="`left: ${getPositionFromIndex(index - 1)}px`"
                 class="absolute"
               >
-                <UiCourseButton
-                  @onClicked="IsClicked = !IsClicked"
-                  :IsClicked="IsClicked"
-                  :IsCompleted="index < lesson"
-                  :IsCurrent="index == lesson"
-                >
-                  <UiCourseButtonSlot :IsDone="index < lesson" />
-                </UiCourseButton>
+                <span cla>
+                  <UiCourseButton
+                    @onClicked="IsClicked = !IsClicked"
+                    :IsClicked="IsClicked"
+                    :IsCompleted="index < lesson"
+                    :IsCurrent="index == lesson"
+                  >
+                    <UiCourseButtonSlot :IsDone="index < lesson" />
+                  </UiCourseButton>
+                </span>
               </div>
             </div>
           </div>

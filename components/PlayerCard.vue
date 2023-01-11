@@ -43,7 +43,7 @@ defineProps({
       <div class="h-full relative">
         <span
           :class="[
-            'transition-all duration-200  border-2 h-6 w-6 bg-white flex items-center justify-center p-[2px] border-gray-200 rounded-[50%_50%_50%_16%] absolute top-[-8px] left-[38px]',
+            'transition-all duration-200  border-2 h-6 w-6 bg-white flex items-center justify-center p-[2px] border-gray-200 rounded-[50%_50%_50%_16%] absolute top-[-4px] left-[38px]',
           ]"
         >
           <img src="../assets/svg/german.svg" alt="" />
