@@ -13,11 +13,17 @@ defineProps({
   Lessons: {
     type: Number,
   },
+  IsClicked: {
+    type: Boolean,
+    required: true,
+  },
 });
 </script>
 
 <template>
   <button
+    :disabled="!IsCurrent && !IsCompleted"
+    @click="$emit('onClicked')"
     :class="[
       IsCurrent
         ? 'activeCourse buttonCourse'
@@ -27,11 +33,26 @@ defineProps({
     ]"
   >
     <slot v-if="!IsCurrent || IsCompleted"></slot>
-    <img
+    <div
+      class="relative flex items-center justify-center w-full h-full"
       v-if="IsCurrent"
-      class="absolute"
-      src="../../assets/svg/courseStart.svg"
-      alt=""
-    />
+    >
+      <transition appear name="start">
+        <span
+          v-if="!IsClicked"
+          class="uppercase absolute -top-10 animate-[bounce_2s_linear_infinite] rounded-[10px] font-bold text-base px-3 py-2 bg-white border-2"
+        >
+          <span
+            class="w-full h-full relative flex text-orange-500 items-center justify-center"
+            >Start
+            <span
+              class="border-r-2 border-b-2 absolute w-3 h-3 rotate-45 -bottom-4 bg-white"
+            >
+            </span>
+          </span>
+        </span>
+      </transition>
+      <img class="absolute" src="../../assets/svg/courseStart.svg" alt="" />
+    </div>
   </button>
 </template>

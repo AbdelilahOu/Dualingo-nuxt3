@@ -9,8 +9,8 @@
         edit goal
       </nuxt-link>
     </div>
-    <div class="pl-1 flex h-24">
-      <div class="h-full">
+    <div class="pl-1 flex h-fit">
+      <div class="h-fit">
         <img
           class="h-[70px] w-[70px]"
           src="https://d35aaqx5ub95lt.cloudfront.net/images/4eb7c316f1956d8aff95611c08778667.svg"
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full h-full">
+    <div class="w-full h-fit">
       <XpGraph :chartData="[50, 20, 120, 350, 20, 100, 12]" />
     </div>
   </div>

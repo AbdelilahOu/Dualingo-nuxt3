@@ -44,3 +44,31 @@
   @apply w-[70px] h-[60px] bg-gray-200  relative  flex items-center rounded-[50%/50%] justify-center;
   box-shadow: 0 8px 0 lightgray;
 }
+
+.start-enter-active {
+  transition: all 0.3s ease;
+}
+
+.start-leave-active {
+  transition: all 0.1s ease;
+}
+
+.start-enter-from,
+.start-leave-to {
+  scale: 0;
+}
+
+.start-enter-to,
+.start-leave-from {
+  scale: 1;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}

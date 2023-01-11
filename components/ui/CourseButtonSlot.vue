@@ -26,9 +26,9 @@ defineProps({
       />
 
       <div class="absolute z-10 top-0 w-full h-full">
-        <client-only>
+        <ClientOnly>
           <Vue3Lottie :animationData="buttonGlow" :speed="1" />
-        </client-only>
+        </ClientOnly>
       </div>
     </div>
     <img

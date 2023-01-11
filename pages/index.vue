@@ -23,6 +23,7 @@ const getPositionFromIndex = (index: number): number => {
   return position[index % 4] * breakSign;
 };
 
+const IsClicked = ref<boolean>(false);
 const lesson = 2;
 </script>
 
@@ -33,13 +34,13 @@ const lesson = 2;
         <UniteCard Unite="1" Title="Describe the weather" />
         <!--  -->
         <div
-          class="w-full h-full grid grid-flow-col pt-4 grid-rows-1 grid-cols-5 max-h-screen"
+          class="w-full h-full grid grid-flow-col grid-rows-1 grid-cols-5 max-h-screen"
         >
           <div class="col-start-1 col-span-2 grid grid-rows-a">
             <div class="row-start-2 row-end-5 col-span-2">
-              <client-only>
+              <ClientOnly>
                 <Vue3Lottie :animationData="bird" :speed="1" />
-              </client-only>
+              </ClientOnly>
             </div>
           </div>
           <div
@@ -55,6 +56,8 @@ const lesson = 2;
                 class="absolute"
               >
                 <UiCourseButton
+                  @onClicked="IsClicked = !IsClicked"
+                  :IsClicked="IsClicked"
                   :IsCompleted="index < lesson"
                   :IsCurrent="index == lesson"
                 >
@@ -70,21 +73,25 @@ const lesson = 2;
                 lesson < 6 ? 'grayscale' : '',
               ]"
             >
-              <client-only>
+              <ClientOnly>
                 <Vue3Lottie
                   :autoPlay="lesson > 6"
                   :animationData="gothic"
                   :speed="1"
                 />
-              </client-only>
+              </ClientOnly>
             </div>
           </div>
         </div>
       </div>
       <div class="hidden md:flex flex-col lg:col-span-4">
         <div class="z-30 sticky top-[92px] flex flex-col gap-5">
-          <LeagueRank />
-          <WeeklyStats />
+          <Transition appear>
+            <LeagueRank />
+          </Transition>
+          <Transition appear>
+            <WeeklyStats />
+          </Transition>
         </div>
       </div>
     </div>
