@@ -16,15 +16,20 @@ model User {
   username  String   @unique()
   email     String   @unique()
   createdAt DateTime @default(now())
-  following Json
-  followers Json
-  langues   Json
-  totalXp   BigInt
+  xp        xp[]
   streak    Int
   league    String
   status    String
   online    Boolean  @default(true)
   League    League   @relation(fields: [league], references: [name])
+}
+
+model xp {
+  id     Int      @id @default(autoincrement())
+  xp     BigInt
+  userId Int
+  day    DateTime @default(now()) @db.Date
+  User   User     @relation(fields: [userId], references: [id])
 }
 
 model League {
