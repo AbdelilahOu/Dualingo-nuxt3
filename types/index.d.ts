@@ -16,3 +16,7 @@ export interface LeaguePlayer {
   name: string;
   xp: number;
 }
+
+export interface UserGet {
+  data: User;
+}
