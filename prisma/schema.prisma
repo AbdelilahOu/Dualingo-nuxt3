@@ -13,7 +13,7 @@ model User {
   username  String   @unique()
   email     String   @unique()
   createdAt DateTime @default(now())
-  xp        xp[]
+  xp        Xp[]
   streak    Int      @default(0)
   league    String   @default("")
   status    String
@@ -21,7 +21,7 @@ model User {
   League    League   @relation(fields: [league], references: [name])
 }
 
-model xp {
+model Xp {
   id     Int      @id @default(autoincrement())
   xp     BigInt
   userId Int
