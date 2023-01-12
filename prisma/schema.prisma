@@ -18,7 +18,7 @@ model User {
   createdAt DateTime @default(now())
   xp        xp[]
   streak    Int      @default(0)
-  league    String
+  league    String   @default("")
   status    String
   online    Boolean  @default(true)
   League    League   @relation(fields: [league], references: [name])
@@ -37,4 +37,35 @@ model League {
   name    String @unique()
   img     String @unique()
   players User[]
+}
+
+model Language {
+  id    Int    @id @default(autoincrement())
+  name  String @unique()
+  units Unit[]
+}
+
+model Unit {
+  id         Int      @id @default(autoincrement())
+  name       String
+  language   Language @relation(fields: [languageId], references: [id])
+  lessons    Lesson[]
+  languageId Int
+}
+
+model Lesson {
+  id     Int    @id @default(autoincrement())
+  name   String
+  unit   Unit   @relation(fields: [unitId], references: [id])
+  words  Word[]
+  unitId Int
+}
+
+model Word {
+  id          Int    @id @default(autoincrement())
+  phrase      String
+  translation String
+  audio       String
+  lesson      Lesson @relation(fields: [lessonId], references: [id])
+  lessonId    Int
 }
