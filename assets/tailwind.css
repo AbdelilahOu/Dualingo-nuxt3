@@ -6,6 +6,7 @@
   html {
     font-family: Proxima Nova, system-ui, sans-serif;
     height: 100vh;
+    @apply scrollbar-thin scrollbar-thumb-transparent;
   }
 }
 
