@@ -15,7 +15,7 @@ definePageMeta({
   layout: "home-layout",
 });
 //
-const courses = ref<number>(8);
+const courses = ref<number>(16);
 let breakSign: number = -1;
 const getPositionFromIndex = (index: number): number => {
   if (index % 4 == 0) breakSign = breakSign * -1;
@@ -30,7 +30,7 @@ const lesson = 2;
 <template>
   <div class="h-full w-full pl-6">
     <div class="w-full h-full grid gap-6 md:grid-cols-2 lg:grid-cols-a">
-      <div class="w-full h-full flex flex-col lg:col-span-6">
+      <div class="w-full h-full flex flex-col pt-4 lg:col-span-6">
         <UniteCard Unite="1" Title="Describe the weather" />
         <!--  -->
         <div
@@ -44,7 +44,7 @@ const lesson = 2;
             </div>
           </div>
           <div
-            class="col-start-3 items-center w-full row-span-full gap-14 pt-5 lg:gap-7 grid grid-rows-a"
+            class="col-start-3 items-center w-full row-span-full gap-14 pt-5 lg:gap-7 flex flex-col"
           >
             <div
               v-for="index in courses"
@@ -86,8 +86,8 @@ const lesson = 2;
           </div>
         </div>
       </div>
-      <div class="hidden md:flex flex-col lg:col-span-4">
-        <div class="z-30 sticky top-[92px] flex flex-col gap-5">
+      <div class="hidden md:flex flex-col pt-4 lg:col-span-4">
+        <div class="z-30 sticky flex top-4 flex-col gap-5">
           <Transition appear>
             <LeagueRank />
           </Transition>
